@@ -1,0 +1,15 @@
+{
+ "name": "App Financiera Dark",
+ "short_name": "App Financiera Dark",
+ "start_url": "./index.html",
+ "display": "standalone",
+ "background_color": "#0d1117",
+ "theme_color": "#4f8cff",
+ "icons": [
+  {
+   "src": "assets/favicon.svg",
+   "sizes": "any",
+   "type": "image/svg+xml"
+  }
+ ]
+}

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finanzas Dark - Control de Ingresos y Egresos</title>
+    <link rel="stylesheet" href="css/estilo.css">
+</head>
+<body class="theme-dark">
+    <header class="app-header">
+        <div class="container header-content">
+            <h1>Finanzas<span class="accent">Dark</span></h1>
+            <p class="subtitle">Control preciso de ingresos y egresos</p>
+        </div>
+    </header>
+
+    <main class="container app-main">
+        <!-- Resumen de Saldos -->
+        <section class="balance-cards">
+            <div class="card balance-total">
+                <h3>Balance Actual</h3>
+                <p id="totalBalance" class="amount">$0.00</p>
+            </div>
+            <div class="card balance-income">
+                <h3>Total Ingresos</h3>
+                <p id="totalIncome" class="amount">$0.00</p>
+            </div>
+            <div class="card balance-expense">
+                <h3>Total Egresos</h3>
+                <p id="totalExpense" class="amount">$0.00</p>
+            </div>
+        </section>
+
+        <!-- Formulario de Movimientos -->
+        <section class="card form-section">
+            <h2>Registrar Movimiento</h2>
+            <form id="transactionForm">
+                <div class="form-group">
+                    <label for="type">Tipo</label>
+                    <select id="type" required>
+                        <option value="ingreso">Ingreso</option>
+                        <option value="egreso">Egreso</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="amount">Monto ($)</label>
+                    <input type="number" id="amount" step="0.01" min="0.01" placeholder="0.00" required>
+                </div>
+                <div class="form-group">
+                    <label for="detail">Detalle / Concepto</label>
+                    <input type="text" id="detail" placeholder="Ej. Sueldo, Supermercado, Alquiler..." required>
+                </div>
+                <div class="form-group">
+                    <label for="datetime">Fecha y Hora</label>
+                    <input type="datetime-local" id="datetime" required>
+                </div>
+                <button type="submit" class="btn-primary">Agregar Movimiento</button>
+            </form>
+        </section>
+
+        <!-- Historial de Movimientos -->
+        <section class="card history-section">
+            <div class="history-header">
+                <h2>Historial de Movimientos</h2>
+                <button id="clearHistory" class="btn-secondary">Limpiar Historial</button>
+            </div>
+            <div class="table-responsive">
+                <table id="transactionsTable">
+                    <thead>
+                        <tr>
+                            <th>Fecha y Hora</th>
+                            <th>Tipo</th>
+                            <th>Detalle</th>
+                            <th>Monto</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody id="transactionsList">
+                        <!-- Los movimientos se insertan dinámicamente -->
+                    </tbody>
+                </table>
+            </div>
+            <p id="noTransactions" class="empty-message">No hay movimientos registrados todavía.</p>
+        </section>
+    </main>
+
+    <footer class="app-footer">
+        <div class="container">
+            <p>&copy; 2026 FinanzasDark - Control Financiero Personal</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
